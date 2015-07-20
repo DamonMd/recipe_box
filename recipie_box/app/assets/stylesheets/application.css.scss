@@ -15,3 +15,17 @@
  */
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+.image-wrapper{
+  border: 3px solid black;
+  overflow: hidden;
+}
+
+
+img{
+  transition: all .3s ease-out;
+}
+
+img:hover{
+  transform: scale(1.075);
+}

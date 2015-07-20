@@ -1,9 +1,16 @@
 <h1>it has begun!</h1>
 
-
-<% @recipe.each do |recipe| %>
-<div class="">
-  <h3><%= link_to recipe.title, recipe %></h3>
-  <%= recipe.description %>
+<% @recipe.each_slice(3) do |recipes| %>
+  <div class="row">
+  <% recipes.each do |recipe| %>
+    <div class="col-md-4">
+      <div class="recipe">
+        <div class="image-wrapper">
+          <a href="recipes/<%= recipe.id %>"><%= image_tag recipe.image(:medium) %></a>
+          <h3><%= link_to recipe.title, recipe %></h3>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
 <% end %>
-</div>

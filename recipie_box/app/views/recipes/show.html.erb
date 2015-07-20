@@ -1,6 +1,14 @@
+<div class="container">
+<%= image_tag @recipe.image(:medium, class: "recipe-image") %>
 <h1><%= @recipe.title %></h1>
 <h2><%= @recipe.description %></h2>
-
+<h2>Ingredients</h2>
+<% @recipe.ingredients.each do |ingredient| %>
+<ul>
+  <li><%= ingredient.name %></li>
+</ul>
+<% end %>
+</div>
 <%= link_to "Back Home", root_path, class: "btn btn-default" %>
 <%= link_to "Edit", edit_recipe_path, class: "btn btn-default" %>
 <%= link_to "Delete", recipe_path, method: :delete, data: {confirm: "sure?"}, class: "btn btn-danger" %>

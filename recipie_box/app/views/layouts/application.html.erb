@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RecipieBox</title>
+  <title>Damon's Recipe App</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :cocoon %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div class="navbar navbar-default navbar-fixed-top topnav">
+  <div class="container topnav">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="navbar-collapse-1">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand top-nav" href='/'>Home</a>
+    </div>
+    <!-- Nav links for top and collapse -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "New Recipe", new_recipe_path %></li>
+        <li><%= link_to "something else" %><li>
+      </ul>
+    </div>
+  </div>
+</div>
+<hr>
 <%= yield %>
 
 </body>
