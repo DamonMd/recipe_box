@@ -1,0 +1,9 @@
+<h1>it has begun!</h1>
+
+
+<% @recipe.each do |recipe| %>
+<div class="">
+  <h3><%= link_to recipe.title, recipe %></h3>
+  <%= recipe.description %>
+<% end %>
+</div>
